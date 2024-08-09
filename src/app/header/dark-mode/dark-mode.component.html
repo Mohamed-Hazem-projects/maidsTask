@@ -1,0 +1,14 @@
+<div>
+  <input
+    type="checkbox"
+    name="darkmode"
+    id="darkmode"
+    [(ngModel)]="isDark"
+    (change)="changeMode()"
+  />
+  <label for="darkmode">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+    <span class="ball"></span>
+  </label>
+</div>

@@ -1,0 +1,12 @@
+<div class="search">
+  <input
+    [(ngModel)]="search"
+    type="search"
+    name="search"
+    placeholder="Search by ID"
+    (input)="Search()"
+    aria-label="Search by ID"
+    aria-describedby="search-help"
+  />
+  <span id="search-help" hidden> Enter an ID to search for users. </span>
+</div>

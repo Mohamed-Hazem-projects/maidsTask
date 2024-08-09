@@ -1,0 +1,25 @@
+<div class="main" role="button">
+  <span (click)="toggleBar()" aria-label="Open notifications">
+    <i class="fa-solid fa-bell fa-lg"> </i>
+  </span>
+  <div
+    id="notifications-bar"
+    class="bar boxshadow"
+    *ngIf="barFlag"
+    (clickedOutside)="hideBar()"
+  >
+    <ul>
+      <h3>Notifications</h3>
+      <li *ngFor="let notification of notificationData">
+        <a routerLink="/Users/User/{{ notification.id }}"
+          ><img [src]="notification.img" alt="notification avatar"
+        /></a>
+
+        <div class="notification-text">
+          <span>{{ notification.notification }}</span>
+          <span>{{ notification.date }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card" cardHoverDir>
+  <div class="image-content">
+    <span class="overlay"></span>
+    <div class="card-image">
+      <a routerLink="/Users/User/{{ User.id }}"
+        ><img [src]="User.avatar" alt="User image"
+      /></a>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <a routerLink="/Users/User/{{ User.id }}"
+      ><h2>{{ User.first_name }} {{ User.last_name }}</h2></a
+    >
+    <p>{{ User.email }}</p>
+    <p class="lorem">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus
+      assumenda explicabo natus.
+    </p>
+    <button routerLink="/Users/User/{{ User.id }}">View more</button>
+  </div>
+</div>

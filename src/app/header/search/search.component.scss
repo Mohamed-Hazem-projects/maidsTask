@@ -1,0 +1,54 @@
+.search {
+  position: relative;
+}
+.search::before {
+  //next 3 lines to use icons in psudeo elements
+  font-family: "Font Awesome 6 Free";
+  content: "\f002";
+  font-weight: 900;
+  color: var(--greydark);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 15px;
+  font-size: 16px;
+  transition: transform ease-in-out 0.3s;
+}
+input {
+  background-color: var(--white);
+  padding: 10px;
+  border: 2px solid var(--greydark);
+  border-radius: 10px;
+  margin-left: 5px;
+  padding-left: 30px;
+  width: 200px;
+  @media (max-width: 767px) {
+    width: 130px;
+  }
+  transition: width 0.3s, border-color 0.25s;
+}
+input::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f002";
+  font-weight: 900;
+}
+input:focus {
+  width: 300px;
+  @media (max-width: 767px) {
+    width: 180px;
+  }
+  @media (max-width: 400px) {
+    width: 155px;
+  }
+  border-color: var(--blue);
+}
+.search:focus-within::before {
+  color: var(--blue);
+  transform: translateY(-50%) rotate(360deg);
+}
+input::placeholder {
+  transition: opacity 0.25s;
+}
+input:focus::placeholder {
+  opacity: 0;
+}

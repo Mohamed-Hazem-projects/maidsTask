@@ -1,0 +1,38 @@
+.main {
+  background-color: var(--header);
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--grey);
+  .icon-search {
+    display: flex;
+    gap: 20px;
+    a {
+      display: flex;
+      align-items: center;
+    }
+    img {
+      width: 120px;
+    }
+  }
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .main {
+    padding: 0;
+    .icon-search {
+      gap: 10px;
+      img {
+        width: 70px;
+      }
+    }
+  }
+}
+.extra-features {
+  display: flex;
+  align-items: center;
+}

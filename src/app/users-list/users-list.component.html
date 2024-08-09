@@ -1,0 +1,23 @@
+<mat-progress-bar
+  *ngIf="(status$ | async) == 'loading' as const"
+  mode="indeterminate"
+  aria-live="polite"
+  aria-label="Loading"
+></mat-progress-bar>
+
+<div class="container appear" *ngIf="searchedUser$ | async as userz">
+  <my-heading [progress]="80">Search Results</my-heading>
+  <div class="card">
+    <card [User]="userz.data"></card>
+  </div>
+</div>
+
+<div class="container">
+  <my-heading [progress]="50">Users</my-heading>
+  <div class="users">
+    <ng-container *ngFor="let user of (userList$ | async)?.data">
+      <card [User]="user"></card>
+    </ng-container>
+  </div>
+  <pagination></pagination>
+</div>

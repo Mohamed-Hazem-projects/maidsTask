@@ -1,0 +1,91 @@
+<div class="all">
+  <mat-progress-bar
+    *ngIf="(status$ | async) == 'loading' as const"
+    mode="indeterminate"
+  ></mat-progress-bar>
+  <div
+    class="container user-details"
+    *ngIf="(searchedUser$ | async)?.data as User"
+  >
+    <div class="main-part">
+      <div class="image-content">
+        <span class="overlay"></span>
+        <div class="card-image">
+          <img [src]="User.avatar" alt="User image" />
+        </div>
+      </div>
+      <div class="user-info">
+        <h1 class="user-name">{{ User.first_name }} {{ User.last_name }}</h1>
+        <p class="user-id">
+          ID: <span class="orange">{{ User.id }}</span>
+        </p>
+        <p class="user-email">
+          Email:
+          <span class="orange">{{ User.email }}</span>
+        </p>
+        <div class="additional-details">
+          <p><strong>Location:</strong> New York, USA</p>
+          <p><strong>Phone:</strong> +20 111 774 1844</p>
+          <p><strong>Joined:</strong> December 1, 1999</p>
+        </div>
+        <button
+          class="btn"
+          (click)="goBack()"
+          aria-label="Go back to user list"
+        >
+          <i class="fa-solid fa-angles-left"></i>Back
+        </button>
+      </div>
+    </div>
+
+    <div class="extra-info">
+      <h2>
+        About&#160;&#160; <span> {{ User.first_name }}</span>
+      </h2>
+      <p class="user-bio">
+        {{ User.first_name }} is a software engineer with a passion for
+        developing innovative solutions. His expertise lies in optimizing
+        performance and contributing to the effectiveness of the organizations
+        he works with.
+      </p>
+      <h3>Interests</h3>
+      <ul class="user-interests">
+        <li>
+          Programming
+          <div class="bar">
+            <div [style.width]="'95%'" class="skill"></div>
+          </div>
+        </li>
+        <li>
+          Gaming
+          <div class="bar">
+            <div [style.width]="'50%'" class="skill"></div>
+          </div>
+        </li>
+        <li>
+          Nutrition
+          <div class="bar">
+            <div [style.width]="'80%'" class="skill"></div>
+          </div>
+        </li>
+        <li>
+          Photography
+          <div class="bar">
+            <div [style.width]="'30%'" class="skill"></div>
+          </div>
+        </li>
+      </ul>
+      <h3>Social Media</h3>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/mohamed-hazem-dev/" target="_blank"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a><i class="fa-brands fa-square-facebook"></i></a>
+        <a><i class="fa-brands fa-square-twitter"></i></a>
+        <a href="https://github.com/Mohamed-Hazem-projects" target="_blank"
+          ><i class="fa-brands fa-square-github"></i
+        ></a>
+      </div>
+    </div>
+  </div>
+</div>

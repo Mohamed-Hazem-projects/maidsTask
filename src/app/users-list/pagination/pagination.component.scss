@@ -1,0 +1,41 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-radius: 8px;
+  column-gap: 12px;
+  > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--btnbg);
+    border-radius: 6px;
+    cursor: pointer;
+    > i {
+      pointer-events: none;
+    }
+  }
+  button:hover {
+    color: var(--background);
+    background: var(--blue);
+    > i {
+      color: var(--background);
+    }
+  }
+  button.active {
+    color: var(--background);
+    background: var(--blue);
+  }
+  > button:disabled {
+    opacity: 30%;
+    color: var(--grey);
+    background: var(--btndisabled);
+    pointer-events: none;
+  }
+}

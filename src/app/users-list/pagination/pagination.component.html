@@ -1,0 +1,25 @@
+<div class="pagination">
+  <button
+    [disabled]="currentPage == 1"
+    (click)="prevPage()"
+    aria-label="Previous page"
+  >
+    <i class="fa-solid fa-angle-left"></i>
+  </button>
+  <button
+    type="button"
+    *ngFor="let page of totalPagesArray"
+    [ngClass]="{ active: clickedButton === page }"
+    (click)="changePage(page)"
+    aria-label="Change Page"
+  >
+    {{ page }}
+  </button>
+  <button
+    [disabled]="currentPage == totalPages"
+    (click)="nextPage()"
+    aria-label="Next page"
+  >
+    <i class="fa-solid fa-angle-right"></i>
+  </button>
+</div>

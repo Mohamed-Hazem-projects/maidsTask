@@ -1,0 +1,142 @@
+.main {
+  > span {
+    position: relative;
+    margin-left: 10px;
+    background-color: var(--grey);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    i {
+      animation: shake 1.5s linear 1.5s infinite;
+    }
+  }
+  > span::before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    right: 2px;
+    top: -2px;
+    background-color: var(--red);
+  }
+}
+.bar {
+  width: 300px;
+  height: 400px;
+  z-index: 999;
+  background-color: var(--grey2);
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  overflow-y: auto;
+  border-radius: 10px;
+  animation: bars 0.3s ease-out;
+  > ul {
+    margin: 0;
+    > h3 {
+      padding: 8px;
+      text-align: center;
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    > li {
+      display: flex;
+      align-items: center;
+      background-color: var(--greylight2);
+      padding: 8px 5px;
+      border-top: 1px solid var(--greydarkboxshadow);
+      transition: background-color 0.3s;
+      > a > img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        margin-left: 0;
+        border: 2px solid var(--white);
+        cursor: pointer;
+      }
+      > div {
+        width: fit-content;
+        margin-left: 9px;
+        > span:first-child {
+          display: block;
+          width: 100%;
+          color: var(--black);
+          font-size: 14px;
+        }
+        > span:last-child {
+          color: #888;
+          font-size: 12px;
+        }
+      }
+    }
+    > li:hover {
+      background-color: var(--btndisabled);
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(lightblue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+@keyframes bars {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 400px;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  4% {
+    transform: rotate(10deg);
+  }
+  8% {
+    transform: rotate(-10deg);
+  }
+  10% {
+    transform: rotate(8deg);
+  }
+  12% {
+    transform: rotate(-8deg);
+  }
+  14% {
+    transform: rotate(6deg);
+  }
+  16% {
+    transform: rotate(-6deg);
+  }
+  18% {
+    transform: rotate(2deg);
+  }
+  20% {
+    transform: rotate(-2deg);
+  }
+  22% {
+    transform: rotate(2deg);
+  }
+  24% {
+    transform: rotate(-2deg);
+  }
+  26% {
+    transform: rotate(0);
+  }
+}
